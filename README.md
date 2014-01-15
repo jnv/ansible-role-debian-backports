@@ -21,7 +21,7 @@ In your playbook:
 
 The role uses [apt_repository module](http://docs.ansible.com/apt_repository_module.html) module which has additional dependencies. I highly recommend to use [bootstrap-debian](https://github.com/cederberg/ansible-bootstrap-debian) role to setup common requirements on Debian-based systems.
 
-You can use `default_release` option for [apt module](http://docs.ansible.com/apt_module.html) to use package from backports. For example
+You can use `default_release` option for [apt module](http://docs.ansible.com/apt_module.html) to use package from backports. For example:
 
 ```yaml
 tasks:
