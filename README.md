@@ -1,4 +1,6 @@
-# [Debian/Ubuntu Backports with Ansible](https://github.com/jnv/ansible-role-debian-backports)
+# Debian/Ubuntu Backports with Ansible
+
+[![Ansible Role: jnv.debian-backports](https://img.shields.io/ansible/role/224.svg?style=flat-square)](https://galaxy.ansible.com/jnv/debian-backports)
 
 Adds backports repository for Debian and Ubuntu.
 
