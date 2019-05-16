@@ -1,7 +1,8 @@
 # [Debian/Ubuntu Backports with Ansible](https://github.com/jnv/ansible-role-debian-backports)
 
 Adds backports repository for Debian and Ubuntu.
-Debian provides backports [only for the latest stable version](https://backports.debian.org/news/stretch-backports/).
+
+**Note for Debian users:** Debian provides backports [only for the latest stable version](https://backports.debian.org/news/stretch-backports/).
 
 ## Usage
 
