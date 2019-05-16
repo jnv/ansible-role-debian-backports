@@ -2,6 +2,8 @@
 
 Adds backports repository for Debian and Ubuntu.
 
+**Note for Debian users:** Debian provides backports [only for the latest stable version](https://backports.debian.org/news/stretch-backports/).
+
 ## Usage
 
 Install via [Galaxy](https://galaxy.ansibleworks.com/):

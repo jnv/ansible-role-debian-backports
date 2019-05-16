@@ -56,7 +56,7 @@ galaxy_info:
     - all
   - name: Debian
     versions:
-    - all
+    - stretch
   categories:
   #- cloud
   #- cloud:ec2
