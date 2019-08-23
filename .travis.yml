@@ -1,0 +1,11 @@
+language: python
+
+script:
+  - echo "Notifying galaxy"
+
+branches:
+  only:
+  - master
+
+notifications:
+  webhooks: https://galaxy.ansible.com/api/v1/notifications/
