@@ -5,7 +5,7 @@
 - name: override uri for old Debian versions
   set_fact:
     backports_uri: "http://archive.debian.org/debian/"
-  when: '"{{ ansible_distribution }}" == "Debian" and "{{ ansible_distribution_release }}" == "jessie"'
+  when: ansible_distribution == "Debian" and ansible_distribution_release == "jessie"
 
 - name: add backports repository
   apt_repository: repo='deb {{backports_uri}} {{backports_components}}' state=present update_cache=yes
