@@ -4,3 +4,18 @@
 
 - name: add backports repository
   apt_repository: repo='deb {{backports_uri}} {{backports_components}}' state=present update_cache=yes
+
+- name: pinning backports priority
+  template:
+    src: "001_backports.j2"
+    dest: "/etc/apt/preferences.d/001_backports"
+    owner: root
+    group: root
+    mode: 0644
+  when: backports_priority != 100
+
+- name: cleanup backports priority if needed
+  file:
+    path: "/etc/apt/preferences.d/001_backports"
+    state: absent
+  when: backports_priority == 100
