@@ -7,15 +7,15 @@
 
 - name: pinning backports priority
   template:
-    src: "001_backports.j2"
-    dest: "/etc/apt/preferences.d/001_backports"
+    src: "001-ansible-role-debian-backports.j2"
+    dest: "/etc/apt/preferences.d/001-ansible-role-debian-backports"
     owner: root
     group: root
     mode: 0644
-  when: backports_priority != 100
+  when: backports_priority_enabled
 
 - name: cleanup backports priority if needed
   file:
-    path: "/etc/apt/preferences.d/001_backports"
+    path: "/etc/apt/preferences.d/001-ansible-role-debian-backports"
     state: absent
-  when: backports_priority == 100
+  when: not backports_priority_enabled

@@ -1,3 +1,4 @@
 ---
 backports_distribution: "{{ansible_distribution_release}}"
-backports_priority: 100
+backports_priority_enabled: false
+backports_priority: 500
