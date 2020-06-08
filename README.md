@@ -42,3 +42,5 @@ tasks:
 - `backports_components`: Release and components for sources.list
     + Debian: `{{backports_distribution}}-backports backports main contrib non-free`
     + Ubuntu: `{{backports_distribution}}-backports main restricted universe multiverse`
+- `backports_priority_enabled`: whether to change backports priority, default `false`
+- `backports_priority`: Allows to change priorities for the backports. Default equals to the system default value of 100. See more at [`AptConfiguration` page](https://wiki.debian.org/AptConfiguration).
