@@ -1,6 +1,6 @@
 # Debian/Ubuntu Backports with Ansible
 
-[![Ansible Role: jnv.debian-backports](https://img.shields.io/ansible/role/224.svg?style=flat-square)](https://galaxy.ansible.com/jnv/debian-backports)
+[![Ansible Role: jnv.debian-backports](https://img.shields.io/ansible/role/224.svg)](https://galaxy.ansible.com/jnv/debian-backports)
 
 Adds backports repository for Debian and Ubuntu.
 
@@ -10,9 +10,17 @@ Adds backports repository for Debian and Ubuntu.
 
 Version 1.0.0 of this role introduced potentially breaking changes for older systems. See [MIGRATING.md](MIGRATING.md) for details.
 
+## Project Status
+
+[![Repo status: Inactive](https://www.repostatus.org/badges/latest/inactive.svg)](https://www.repostatus.org/#inactive)
+
+The role has reached a stable, usable state but is no longer being actively developed. Support and maintenance will be provided as time allows, primarily to keep the role working under newer versions of Debian, Ubuntu, and Ansible.
+
+If you wish to add new features, feel free to fork the project. Also [let me know](https://github.com/jnv/ansible-role-debian-backports/issues/13) about your role, I might list it in [Similar Roles](#similar-roles) section.
+
 ## Usage
 
-Install via [Galaxy](https://galaxy.ansibleworks.com/):
+Install via [Galaxy](https://galaxy.ansible.com/):
 
 ```
 ansible-galaxy install jnv.debian-backports
@@ -47,5 +55,10 @@ tasks:
   - Debian: `{{backports_distribution}}-backports backports main contrib non-free`
   - Ubuntu: `{{backports_distribution}}-backports main restricted universe multiverse`
 - `backports_state`: Whether the backports repository should be used; default `'present'`, change to `'absent'` to disable the role.
-- `backports_priority_enabled`: Whether to change backports priority; default `false`.
-- `backports_priority`: Allows to change priorities for the backports. Default equals to the system default value of 100. See more at [`AptConfiguration` page](https://wiki.debian.org/AptConfiguration).
+- `backports_priority_enabled`: Whether to enable backports priority (APT pinning); default `false`.
+- `backports_priority`: Set pin priority for the backports repository; default `100`. See more at [`AptConfiguration` page](https://wiki.debian.org/AptConfiguration).
+
+## Similar Roles
+
+- [jgeusebroek.backports](https://galaxy.ansible.com/jgeusebroek/backports)
+- [oefenweb.apt](https://galaxy.ansible.com/oefenweb/apt) – does much more, but can be also used to enable backports.
