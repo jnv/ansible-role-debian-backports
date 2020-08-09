@@ -10,67 +10,17 @@ galaxy_info:
   # platform on this list, let us know and we'll get it added!
   #
   platforms:
-  #- name: EL
-  #  versions:
-  #  - all
-  #  - 5
-  #  - 6
-  #- name: GenericUNIX
-  #  versions:
-  #  - all
-  #  - any
-  #- name: Fedora
-  #  versions:
-  #  - all
-  #  - 16
-  #  - 17
-  #  - 18
-  #  - 19
-  #  - 20
-  #- name: opensuse
-  #  versions:
-  #  - all
-  #  - 12.1
-  #  - 12.2
-  #  - 12.3
-  #  - 13.1
-  #  - 13.2
-  #- name: GenericBSD
-  #  versions:
-  #  - all
-  #  - any
-  #- name: FreeBSD
-  #  versions:
-  #  - all
-  #  - 8.0
-  #  - 8.1
-  #  - 8.2
-  #  - 8.3
-  #  - 8.4
-  #  - 9.0
-  #  - 9.1
-  #  - 9.1
-  #  - 9.2
   - name: Ubuntu
     versions:
     - all
   - name: Debian
     versions:
-    - stretch
-  categories:
-  #- cloud
-  #- cloud:ec2
-  #- cloud:gce
-  #- cloud:rax
-  #- database
-  #- database:nosql
-  #- database:sql
-  #- development
-  #- monitoring
-  #- networking
-  - packaging
-  - system
-  #- web
+    - buster
+    - bullseye
+  galaxy_tags:
+    - system
+    - packaging
+    - apt
 dependencies: []
   # List your role dependencies here, one per line. Only
   # dependencies available via galaxy should be listed here.
