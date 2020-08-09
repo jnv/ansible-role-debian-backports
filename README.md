@@ -6,6 +6,10 @@ Adds backports repository for Debian and Ubuntu.
 
 **Note for Debian users:** Debian provides backports [only for the latest stable version](https://backports.debian.org/news/stretch-backports/).
 
+## Breaking Changes
+
+Version 1.0.0 of this role introduced potentially breaking changes for older systems. See [MIGRATING.md](MIGRATING.md) for details.
+
 ## Usage
 
 Install via [Galaxy](https://galaxy.ansibleworks.com/):
@@ -37,10 +41,10 @@ tasks:
 ## Variables
 
 - `backports_uri`: URI of the backports repository; change this if you want to use a particular mirror.
-    + Debian: `http://ftp.debian.org/debian`
-    + Ubuntu: `http://archive.ubuntu.com/ubuntu`
+  - Debian: `http://deb.debian.org/debian`
+  - Ubuntu: `https://archive.ubuntu.com/ubuntu`
 - `backports_components`: Release and components for sources.list
-    + Debian: `{{backports_distribution}}-backports backports main contrib non-free`
-    + Ubuntu: `{{backports_distribution}}-backports main restricted universe multiverse`
-- `backports_priority_enabled`: whether to change backports priority, default `false`
+  - Debian: `{{backports_distribution}}-backports backports main contrib non-free`
+  - Ubuntu: `{{backports_distribution}}-backports main restricted universe multiverse`
+- `backports_priority_enabled`: Whether to change backports priority, default `false`.
 - `backports_priority`: Allows to change priorities for the backports. Default equals to the system default value of 100. See more at [`AptConfiguration` page](https://wiki.debian.org/AptConfiguration).
