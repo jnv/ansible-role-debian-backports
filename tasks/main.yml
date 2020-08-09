@@ -3,7 +3,10 @@
   include_vars: "../defaults/{{ ansible_distribution }}.yml"
 
 - name: add backports repository
-  apt_repository: repo='deb {{backports_uri}} {{backports_components}}' state=present update_cache=yes
+  apt_repository:
+    repo: deb {{ backports_uri }} {{ backports_components }}
+    state: present
+    update_cache: yes
 
 - name: pinning backports priority
   template:
