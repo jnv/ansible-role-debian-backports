@@ -1,11 +1,17 @@
+sudo: required
 language: python
+services: docker
+
+cache: pip
+
+install:
+  - pip install ansible docker ansible-lint
+  - ansible-galaxy install -r tests/requirements.yml -p tests/roles/
 
 script:
-  - echo "Notifying galaxy"
-
-branches:
-  only:
-  - master
+  - ansible --version
+  - ansible-lint
+  - tests/run.sh
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
