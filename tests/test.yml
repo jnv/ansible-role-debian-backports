@@ -43,7 +43,6 @@
       command: grep -r --include '*.list' '^deb ' /etc/apt/sources.list /etc/apt/sources.list.d/
       register: aptsources
       changed_when: false
-
     - name: Check for backports repository
       assert:
         that: aptsources.stdout is search("backports")
@@ -53,7 +52,6 @@
         name: ansible-role-debian-backports
       vars:
         backports_priority_enabled: true
-
     - name: Check for pinning configuration
       stat:
         path: /etc/apt/preferences.d/001-ansible-role-debian-backports

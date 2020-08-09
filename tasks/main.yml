@@ -5,7 +5,7 @@
 - name: add backports repository
   apt_repository:
     repo: deb {{ backports_uri }} {{ backports_components }}
-    state: present
+    state: "{{ backports_state }}"
     update_cache: yes
 
 - name: pinning backports priority
