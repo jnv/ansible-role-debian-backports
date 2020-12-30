@@ -1,7 +1,7 @@
 # Debian/Ubuntu Backports with Ansible
 
 [![Ansible Role: jnv.debian-backports](https://img.shields.io/ansible/role/224.svg)](https://galaxy.ansible.com/jnv/debian-backports)
-[![Build Status](https://travis-ci.org/jnv/ansible-role-debian-backports.svg?branch=master)](https://travis-ci.org/jnv/ansible-role-debian-backports)
+[![Build Status](https://github.com/jnv/ansible-role-debian-backports/workflows/Integration/badge.svg?branch=master)](https://github.com/jnv/ansible-role-debian-backports/actions?query=workflow%3AIntegration)
 
 Adds backports repository for Debian and Ubuntu.
 
@@ -63,3 +63,15 @@ tasks:
 
 - [jgeusebroek.backports](https://galaxy.ansible.com/jgeusebroek/backports)
 - [oefenweb.apt](https://galaxy.ansible.com/oefenweb/apt) – does much more, but can be also used to enable backports.
+
+## Testing
+
+For developing and testing this role Github Actions, Molecule and Vagrant is used.
+In a local environment environment you can easily test the role with
+
+```
+pip3 install molecule-vagrant ansible-lint yamllint
+molecule test
+```
+
+This requires [Vagrant](https://www.vagrantup.com/downloads.html) to be installed.

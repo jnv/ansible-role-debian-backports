@@ -1,3 +1,5 @@
 ---
-backports_uri: http://deb.debian.org/debian
-backports_components: "{{backports_distribution}}-backports main contrib non-free"
+backports_uri: https://deb.debian.org/debian
+backports_components: "{{ backports_distribution }}-backports main contrib non-free"
+backports_additional_packages:
+  - apt-transport-https
