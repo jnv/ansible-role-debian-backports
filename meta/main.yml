@@ -1,17 +1,18 @@
 ---
 galaxy_info:
+  name:
   author: Jan Vlnas
   description: Add backports repository for Debian and Ubuntu
   license: Unlicense
   min_ansible_version: 2.6
   platforms:
-  - name: Ubuntu
-    versions:
-    - all
-  - name: Debian
-    versions:
-    - buster
-    - bullseye
+    - name: Ubuntu
+      versions:
+        - all
+    - name: Debian
+      versions:
+        - buster
+        - bullseye
   galaxy_tags:
     - system
     - packaging
