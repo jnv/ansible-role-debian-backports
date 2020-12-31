@@ -2,9 +2,25 @@
 - name: add distribution-specific variables
   include_vars: "../defaults/{{ ansible_distribution }}.yml"
 
+- name: install additional packages
+  apt:
+    pkg: "{{ backports_internal_additional_packages }}"
+    state: present
+  when: backports_internal_additional_packages | length > 0
+
+- name: overwrite backports_internal_uri with backports_uri
+  set_fact:
+    backports_internal_uri: "{{ backports_uri }}"
+  when: backports_uri | length > 0
+
+- name: overwrite backports_internal_components with backports_components
+  set_fact:
+    backports_internal_components: "{{ backports_components }}"
+  when: backports_components | length > 0
+
 - name: add backports repository
   apt_repository:
-    repo: deb {{ backports_uri }} {{ backports_components }}
+    repo: deb {{ backports_internal_uri }} {{ backports_internal_components }}
     state: "{{ backports_state }}"
     update_cache: yes
 

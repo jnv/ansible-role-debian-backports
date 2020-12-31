@@ -49,10 +49,10 @@ tasks:
 
 ## Variables
 
-- `backports_uri`: URI of the backports repository; change this if you want to use a particular mirror.
+- `backports_internal_uri`: URI of the backports repository; change this if you want to use a particular mirror.
   - Debian: `http://deb.debian.org/debian`
   - Ubuntu: `https://archive.ubuntu.com/ubuntu`
-- `backports_components`: Release and components for sources.list
+- `backports_internal_components`: Release and components for sources.list
   - Debian: `{{backports_distribution}}-backports backports main contrib non-free`
   - Ubuntu: `{{backports_distribution}}-backports main restricted universe multiverse`
 - `backports_state`: Whether the backports repository should be used; default `'present'`, change to `'absent'` to disable the role.

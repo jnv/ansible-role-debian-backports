@@ -1,5 +1,9 @@
 ---
-backports_distribution: "{{ansible_distribution_release}}"
+backports_distribution: "{{ ansible_distribution_release }}"
 backports_priority_enabled: false
 backports_priority: 100
 backports_state: 'present'
+# A string for example http://deb.debian.org/debian
+backports_uri: "http://deb.debian.org/debian"
+# Components in a string such as "{{ backports_distribution }}-backports main restricted universe multiverse"
+backports_components: ""

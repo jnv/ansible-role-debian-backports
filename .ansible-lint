@@ -1,2 +1,8 @@
 exclude_paths:
   - tests/
+
+# Ignores warning about problematic role names.
+# role name should be debian_backports (needs to be changed in meta.yml
+# and README.md
+skip_list:
+  - 106

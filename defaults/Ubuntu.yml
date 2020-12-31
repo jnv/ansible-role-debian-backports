@@ -1,3 +1,4 @@
 ---
-backports_uri: https://archive.ubuntu.com/ubuntu
-backports_components: "{{backports_distribution}}-backports main restricted universe multiverse"
+backports_internal_uri: https://archive.ubuntu.com/ubuntu
+backports_internal_components: "{{ backports_distribution }}-backports main restricted universe multiverse"
+backports_internal_additional_packages: []
