@@ -50,11 +50,11 @@ tasks:
 ## Variables
 
 - `backports_uri`: URI of the backports repository; change this if you want to use a particular mirror.
-  - Debian: `http://deb.debian.org/debian`
+  - Debian: `https://deb.debian.org/debian`
   - Ubuntu: `http://archive.ubuntu.com/ubuntu`
 - `backports_components`: Release and components for sources.list
-  - Debian: `{{backports_distribution}}-backports backports main contrib non-free`
-  - Ubuntu: `{{backports_distribution}}-backports main restricted universe multiverse`
+  - Debian: `{{ backports_distribution }}-backports backports main contrib non-free`
+  - Ubuntu: `{{ backports_distribution }}-backports main restricted universe multiverse`
 - `backports_state`: Whether the backports repository should be used; default `'present'`, change to `'absent'` to disable the role.
 - `backports_priority_enabled`: Whether to enable backports priority (APT pinning); default `false`.
 - `backports_priority`: Set pin priority for the backports repository; default `100`. See more at [`AptConfiguration` page](https://wiki.debian.org/AptConfiguration).
