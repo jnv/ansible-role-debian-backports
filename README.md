@@ -51,7 +51,7 @@ tasks:
 
 - `backports_uri`: URI of the backports repository; change this if you want to use a particular mirror.
   - Debian: `http://deb.debian.org/debian`
-  - Ubuntu: `https://archive.ubuntu.com/ubuntu`
+  - Ubuntu: `http://archive.ubuntu.com/ubuntu`
 - `backports_components`: Release and components for sources.list
   - Debian: `{{backports_distribution}}-backports backports main contrib non-free`
   - Ubuntu: `{{backports_distribution}}-backports main restricted universe multiverse`
