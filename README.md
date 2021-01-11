@@ -46,7 +46,7 @@ tasks:
 ## Variables
 
 - `backports_uri`: URI of the backports repository; change this if you want to use a particular mirror.
-  - Debian: `http://deb.debian.org/debian`
+  - Debian: `https://deb.debian.org/debian`
   - Ubuntu: `http://archive.ubuntu.com/ubuntu`
 - `backports_components`: Release and components for sources.list
   - Debian: `{{ backports_distribution }}-backports backports main contrib non-free`
