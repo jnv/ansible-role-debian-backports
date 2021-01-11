@@ -7,10 +7,6 @@ Adds backports repository for Debian and Ubuntu.
 
 **Note for Debian users:** Debian provides backports [only for the latest stable version](https://backports.debian.org/news/stretch-backports/).
 
-## Breaking Changes
-
-Version 1.0.0 of this role introduced potentially breaking changes for older systems. See [MIGRATING.md](MIGRATING.md) for details.
-
 ## Project Status
 
 [![Repo status: Inactive](https://www.repostatus.org/badges/latest/inactive.svg)](https://www.repostatus.org/#inactive)
