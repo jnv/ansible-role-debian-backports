@@ -2,6 +2,11 @@
 - name: Verify
   hosts: all
   become: True
+  vars:
+    # The following package needs to have a backport in all
+    # backport repositories, this seems to be atm only cockpit.
+    backport_test_package: cockpit-system
+
   tasks:
     - name: List apt sources
       command: grep -r --include '*.list' '^deb ' /etc/apt/sources.list /etc/apt/sources.list.d/
@@ -11,6 +16,30 @@
     - name: Check for backports repository
       assert:
         that: aptsources.stdout is search("backports")
+
+    # This task will fail with a broken backports repository
+    - name: Run "apt-get update" to ensure backports are present on Ubuntu
+      apt:
+        update_cache: yes
+
+    # First two lines need to be stripped due to apt output format
+    # Expected output:
+    # vagrant@bionic64:~$ sudo apt -t bionic-backports search cockpit-system
+    #    Sorting... Done
+    #    Full Text Search... Done
+    #    cockpit-system/bionic-backports 215-1~ubuntu18.04.1 all
+    #      Cockpit admin interface for a system
+    #
+    - name: "Search {{ backport_test_package }} package from backports"
+      shell: |
+        executable=/bin/bash set -o pipefail &&
+        apt -t {{ ansible_distribution_release }}-backports search {{ backport_test_package }} | tail -n +3 | wc -l
+      changed_when: False
+      register: package_backport_availability
+
+    - name: Assert that packages are available
+      assert:
+        that: package_backport_availability.stdout | int > 0
 
     - name: Test sources pinning
       include_role:
