@@ -9,11 +9,9 @@ Adds backports repository for Debian and Ubuntu.
 
 ## Project Status
 
-[![Repo status: Inactive](https://www.repostatus.org/badges/latest/inactive.svg)](https://www.repostatus.org/#inactive)
+[![Project Status: Unsupported](https://www.repostatus.org/badges/latest/unsupported.svg)](https://www.repostatus.org/#unsupported)
 
-The role has reached a stable, usable state but is no longer being actively developed. Support and maintenance will be provided as time allows, primarily to keep the role working under newer versions of Debian, Ubuntu, and Ansible.
-
-If you wish to add new features, feel free to fork the project. Also [let me know](https://github.com/jnv/ansible-role-debian-backports/issues/13) about your role, I might list it in [Similar Roles](#similar-roles) section.
+The project has reached a stable, usable state but the author(s) have ceased all work on it. See [Similar Roles](#similar-roles) section for alternatives.
 
 ## Usage
 
